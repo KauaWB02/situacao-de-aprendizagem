@@ -3,6 +3,7 @@ programa
 	inclua biblioteca Util --> u
 	
 	funcao inicio(){
+		
 		inteiro cont, usu
 		caracter op
 		cadeia nome
@@ -60,9 +61,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 913; 
+ * @POSICAO-CURSOR = 891; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {usuarios, 9, 9, 8}-{nascimento, 10, 9, 10};
+ * @SIMBOLOS-INSPECIONADOS = {usuarios, 10, 9, 8}-{nascimento, 11, 9, 10};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
