@@ -6,12 +6,8 @@ programa
 		inteiro usu,opt = 1,cont
 		logico sair = verdadeiro
 		cadeia usuarios[100],nascimento [100],data,nome
-		cont = 1
+		cont =1
 
-
-		escreva("Olá, seja muito bem vindo a OZZY\n \n")
-		escreva("Quantos usuarios você vai cadastrar? \n \n")
-		leia(usu)
 		
 		enquanto(sair != falso){ //Kaua
 			se(opt < 1){ // Kauã
@@ -21,19 +17,26 @@ programa
 			}
 			escolha(opt){
 				caso 1:
-					opt = 0
-					enquanto (cont <= usu){ //Tiago
-						escreva ("\nDigite o nome do ", cont , "°. usuário \n \n")
+					escreva("Quantos usuarios você vai cadastrar? \n \n")
+					leia(usu)
+					enquanto (cont <= usu ou usu < cont){ //Tiago
+						se(usu == 0){
+							escreva("Você cadastrou todos os usuários\n\n")
+							limpa()
+							pare
+						}
+						escreva ("\nDigite o nome do ", usu , "°. usuário \n")
 						leia(nome)
 						
-						escreva ("\nAgora digite a data de nascimento do ", cont , "°. usuário \n \n")
+						escreva ("\nAgora digite a data de nascimento do ", usu , "°. usuário \n")
 						leia (data)
 						
 						usuarios[cont - 1] = nome
 						nascimento[cont - 1] = data
 						cont++
+						usu--
 					}//Tiago
-					
+					opt = 0
 				pare
 				caso 2:
 					opt = 0
@@ -62,9 +65,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1051; 
+ * @POSICAO-CURSOR = 608; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {opt, 6, 14, 3};
+ * @SIMBOLOS-INSPECIONADOS = {usu, 6, 10, 3}-{opt, 6, 14, 3}-{cont, 6, 22, 4}-{usuarios, 8, 9, 8}-{nascimento, 8, 23, 10};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
