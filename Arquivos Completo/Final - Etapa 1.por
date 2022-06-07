@@ -3,46 +3,53 @@ programa
 	
 	funcao inicio()
 	{
-		inteiro usu,opt = 1,cont
-		logico sair = verdadeiro
-		cadeia usuarios[100],nascimento [100],data,nome
-		cont =1
+		inteiro quantiCadastro,optcao = 1,contador
+		logico encerrar = verdadeiro
+		cadeia nomeUsuarios[100],dataNascimento[100],data,nome
+		contador =1
 
 		
-		enquanto(sair != falso){ //Kaua
-			se(opt < 1){ // Kauã
+		enquanto(encerrar != falso){ //Kaua
+			se(optcao < 1){ // Kauã
+				
 				// Mostra a msg do menu
 				escreva("\nEscolha uma opção\n 1 - Cadastrar usuário\n 2 - Listar todos os usuários\n 3 - Sair do sistema \n \n")
-				leia(opt)
+				leia(optcao)
+				
 			}
-			escolha(opt){
+			escolha(optcao){
 				caso 1:
+				
 					escreva("Quantos usuarios você vai cadastrar? \n \n")
-					leia(usu)
-					enquanto (cont <= usu ou usu < cont){ //Tiago
-						se(usu == 0){
+					leia(quantiCadastro)
+					
+					enquanto (contador <= quantiCadastro ou quantiCadastro < contador){ //Tiago
+						
+						se(quantiCadastro == 0){
 							escreva("Você cadastrou todos os usuários\n\n")
 							limpa()
 							pare
 						}
-						escreva ("\nDigite o nome do ", usu , "°. usuário \n")
+						
+						escreva ("\nDigite o nome do ", contador , "°. usuário \n")
 						leia(nome)
 						
-						escreva ("\nAgora digite a data de nascimento do ", usu , "°. usuário \n")
+						escreva ("\nAgora digite a data de nascimento do ", contador , "°. usuário \n")
 						leia (data)
 						
-						usuarios[cont - 1] = nome
-						nascimento[cont - 1] = data
-						cont++
-						usu--
+						nomeUsuarios[contador - 1] = nome
+						dataNascimento[contador - 1] = data
+						
+						contador++
+						quantiCadastro--
 					}//Tiago
-					opt = 0
+					optcao = 0
 				pare
 				caso 2:
-					opt = 0
-					para(inteiro i = 0; i < 5;i++){ // Kaua
-						se(usuarios[i] != "" ou nascimento[i] != ""){
-							escreva(usuarios[i]," : ",nascimento[i],"\n")
+					optcao = 0
+					para(inteiro i = 0; i < contador - 1;i++){ // Kaua
+						se(nomeUsuarios[i] != "" ou dataNascimento[i] != ""){
+							escreva(nomeUsuarios[i]," : ",dataNascimento[i],"\n")
 						}
 					}//Kaua
 					
@@ -50,11 +57,12 @@ programa
 				caso 3:
 					//Kaua
 					escreva(" \n Volte sempre! \n")
-					sair = falso
+					encerrar = falso
 					//Kaua
 				pare
 				caso contrario:
-					escreva("Opção inválida")
+					escreva("Opção inválida, Encerrando algoritmo...")
+					encerrar = falso
 				pare
 			}
 		}//Kaua
@@ -65,9 +73,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 608; 
+ * @POSICAO-CURSOR = 1599; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {usu, 6, 10, 3}-{opt, 6, 14, 3}-{cont, 6, 22, 4}-{usuarios, 8, 9, 8}-{nascimento, 8, 23, 10};
+ * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
