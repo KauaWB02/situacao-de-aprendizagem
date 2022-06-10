@@ -1,7 +1,6 @@
 programa
 {
 	inclua biblioteca Arquivos --> A
-	inclua biblioteca Util --> U
 	
 	funcao inicio()
 	{
@@ -13,6 +12,12 @@ programa
 		//Aqui tamos botando contador como 1
 		contador = 1
 
+
+
+		
+
+
+		
 		//Aqui quantos usuários vai ser cadastrardo
 		escreva("Quantos usuários você vai cadastrar? \n \n")
 		leia(quantiCadastro)
@@ -123,9 +128,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3201; 
+ * @POSICAO-CURSOR = 332; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {quantiCadastro, 9, 10, 14}-{opcao, 9, 25, 5}-{contador, 9, 35, 8}-{nomeUsuarios, 11, 9, 12}-{idadeUsuarios, 11, 27, 13};
+ * @SIMBOLOS-INSPECIONADOS = {quantiCadastro, 8, 10, 14}-{opcao, 8, 25, 5}-{contador, 8, 35, 8}-{nomeUsuarios, 10, 9, 12}-{idadeUsuarios, 10, 27, 13};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
