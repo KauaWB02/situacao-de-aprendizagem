@@ -107,7 +107,7 @@ programa
 							limpa()
 							pare
 						}
-
+						limpa()
 						//Qual o nome do usuário que sera cadastrardo
 						escreva ("Digite nome do(a) usuário(a): \n")
 						leia(nome)
@@ -178,7 +178,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3620; 
+ * @POSICAO-CURSOR = 3411; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {quantiCadastro, 9, 10, 14}-{opcao, 9, 25, 5}-{contador, 9, 35, 8}-{contNome, 9, 64, 8}-{contIdade, 9, 76, 9}-{indice, 9, 96, 6}-{nomeUsuarios, 11, 9, 12}-{idadeUsuarios, 11, 27, 13};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
