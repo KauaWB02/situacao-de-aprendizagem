@@ -17,7 +17,7 @@ programa
 		se(A.arquivo_existe(arquivoNome)){
 			
 			//Abrindo arquivo para coletar dados
-			endereco = A.abrir_arquivo(arquivoNome, 0)
+			endereco = A.abrir_arquivo(arquivoNome, A.MODO_LEITURA)
 
 			//Fazendo um loop ate o arquivo chegar ao fim
 			enquanto(nao A.fim_arquivo(endereco)){
@@ -109,11 +109,11 @@ programa
 						}
 
 						//Qual o nome do usuário que sera cadastrardo
-						escreva ("Digite nome do usuário: \n")
+						escreva ("Digite nome do(a) usuário(a): \n")
 						leia(nome)
 
 						//Qual a idade do usuário que sera cadastrardo
-						escreva ("Agora digite a idade do ", nome,": \n")
+						escreva ("Agora digite a idade do(a) ", nome,": \n")
 						leia(idade)
 
 						//Aqui vamos colocar o nome do usuário no vetor
@@ -178,7 +178,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 558; 
+ * @POSICAO-CURSOR = 3620; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {quantiCadastro, 9, 10, 14}-{opcao, 9, 25, 5}-{contador, 9, 35, 8}-{contNome, 9, 64, 8}-{contIdade, 9, 76, 9}-{indice, 9, 96, 6}-{nomeUsuarios, 11, 9, 12}-{idadeUsuarios, 11, 27, 13};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
