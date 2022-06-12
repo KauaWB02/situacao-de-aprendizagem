@@ -6,19 +6,23 @@ programa
 	funcao inicio()
 	{
 		//Declarando variaveis
-		inteiro quantiCadastro,opcao = 1,contador,quantVezes,endereco,contNome =0,contIdade =0,flag=1,indice = 0
+		inteiro quantiCadastro = 0,opcao = 1,contador,quantVezes,endereco,contNome =0,contIdade =0,flag=1,indice = 0
 		logico encerrar = verdadeiro
 		cadeia nomeUsuarios[100],idadeUsuarios[100],idade,nome,arquivoNome = "pessoas.txt",linha
 
 		//Aqui tamos botando contador como 1
 		contador = 0
-
+		//Aqui quantos usuários vai ser cadastrardo
+		escreva("Quantos usuários você vai ser cadastrado? \n")
+		leia(quantiCadastro)
+		limpa()
 		//Verificando se o arquivo existe
 		se(A.arquivo_existe(arquivoNome)){
-			
+			//Coletando dados para o sistema
+			escreva("Coletando dados, Aguarde alguns segundos... \n")
 			//Abrindo arquivo para coletar dados
 			endereco = A.abrir_arquivo(arquivoNome, A.MODO_LEITURA)
-
+			
 			//Fazendo um loop ate o arquivo chegar ao fim
 			enquanto(nao A.fim_arquivo(endereco)){
 				
@@ -27,7 +31,6 @@ programa
 
 				// Vericando se flag é igual a 1
 				se(flag == 1){
-
 					//Vai armazenar no array o nome da linha dentro do arquivo
 					nomeUsuarios[contNome] = linha
 					//Vai contar mais 1 na variavel contNome
@@ -49,19 +52,13 @@ programa
 			}
 			//Vai fechar o arquivo que abrimos para pegar informações
 			A.fechar_arquivo(endereco)
+			U.aguarde(1000*3)
+			limpa()
 		}senao{
 			//Arquivo não existe no mesmo diretorio
 			escreva("Erro!, Arquivo não existe nesta pasta")
+			encerrar = falso
 		}
-		//Coletando dados para o sistema
-		escreva("Coletando dados, Aguarde alguns segundos... \n")
-		U.aguarde(1000*3)
-		limpa()
-		
-		//Aqui quantos usuários vai ser cadastrardo
-		escreva("Quantos usuários você vai cadastrar? \n")
-		leia(quantiCadastro)
-		limpa()
 
 		//Enquanto o encerrar for diferente de falso no caso for verdadeiro vai continua fazendo um loop infinito
 		enquanto(encerrar != falso){ 
@@ -107,7 +104,7 @@ programa
 							limpa()
 							pare
 						}
-						limpa()
+
 						//Qual o nome do usuário que sera cadastrardo
 						escreva ("Digite nome do(a) usuário(a): \n")
 						leia(nome)
@@ -178,9 +175,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3411; 
+ * @POSICAO-CURSOR = 5460; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {quantiCadastro, 9, 10, 14}-{opcao, 9, 25, 5}-{contador, 9, 35, 8}-{contNome, 9, 64, 8}-{contIdade, 9, 76, 9}-{indice, 9, 96, 6}-{nomeUsuarios, 11, 9, 12}-{idadeUsuarios, 11, 27, 13};
+ * @SIMBOLOS-INSPECIONADOS = {quantiCadastro, 9, 10, 14}-{opcao, 9, 29, 5}-{contador, 9, 39, 8}-{contNome, 9, 68, 8}-{contIdade, 9, 80, 9}-{indice, 9, 100, 6}-{nomeUsuarios, 11, 9, 12}-{idadeUsuarios, 11, 27, 13};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
