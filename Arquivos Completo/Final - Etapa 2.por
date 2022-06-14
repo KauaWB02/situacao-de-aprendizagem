@@ -91,7 +91,7 @@ programa
 						se(quantiCadastro == 0){
 							
 							//Aqui quantos usuários vai ser cadastrardo
-							escreva("Quantos usuários você vai ser cadastrado? \n")
+							escreva("Quantos usuários vai ser cadastrado? \n")
 							leia(quantiCadastro)
 							limpa()
 						}
@@ -197,7 +197,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5715; 
+ * @POSICAO-CURSOR = 3106; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {quantiCadastro, 9, 10, 14}-{opcao, 9, 29, 5}-{contador, 9, 39, 8}-{contNome, 9, 72, 8}-{contIdade, 9, 84, 9}-{flag, 9, 97, 4}-{indice, 9, 104, 6}-{nomeUsuarios, 11, 9, 12}-{idadeUsuarios, 11, 26, 13};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
