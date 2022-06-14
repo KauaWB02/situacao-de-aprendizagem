@@ -6,16 +6,16 @@ programa
 	funcao inicio()
 	{
 		//Declarando variaveis
-		inteiro quantiCadastro = 0,opcao = 1,contador,quantVezes,endereco,contNome =0,contIdade =0,flag=1,indice = 0
+		inteiro quantiCadastro = 0,opcao = 1,contador = 0,quantVezes,endereco,contNome =0,contIdade =0,flag=0,indice = 0,capacidade
 		logico encerrar = verdadeiro
-		cadeia nomeUsuarios[100],idadeUsuarios[100],idade,nome,arquivoNome = "pessoas.txt",linha
+		cadeia nomeUsuarios[10],idadeUsuarios[10],idade,nome,arquivoNome = "pessoas.txt",linha
 
-		//Aqui tamos botando contador como 1
-		contador = 0
 		//Aqui quantos usuários vai ser cadastrardo
 		escreva("Quantos usuários você vai ser cadastrado? \n")
 		leia(quantiCadastro)
 		limpa()
+
+		capacidade = U.numero_elementos(nomeUsuarios)
 		//Verificando se o arquivo existe
 		se(A.arquivo_existe(arquivoNome)){
 			//Coletando dados para o sistema
@@ -24,30 +24,32 @@ programa
 			endereco = A.abrir_arquivo(arquivoNome, A.MODO_LEITURA)
 			
 			//Fazendo um loop ate o arquivo chegar ao fim
-			enquanto(nao A.fim_arquivo(endereco)){
-				
+			enquanto(A.fim_arquivo(endereco) != verdadeiro){
 				//Cada linha do arquivo vai ser armazeanada na variavel linha
 				linha = A.ler_linha(endereco)
-
 				// Vericando se flag é igual a 1
-				se(flag == 1){
+				se(flag == 0){
 					//Vai armazenar no array o nome da linha dentro do arquivo
 					nomeUsuarios[contNome] = linha
 					//Vai contar mais 1 na variavel contNome
 					contNome++
 					//Vai deminuir 1 na variavel flag
-					flag--
+					flag++
 					//Vai contar mais 1 na variavel contador
 					contador++
-					//Vai contar mais 1 na variavel indice
-					indice++
 				}senao{
 					//Vai armazenar no array a idade da linha dentro do arquivo
 					idadeUsuarios[contIdade] = linha
 					//Vai contar mais 1 na variavel contIdade
 					contIdade++
 					//Vai contar mais 1 na variavel flag
-					flag++
+					flag--
+					//Vai contar mais 1 na variavel indice
+					indice++
+				}
+				//Verificando se quantidade de usuários cadastrados maior que o tamanho do vetor
+				se(contNome == capacidade e contIdade == capacidade){
+					pare
 				}
 			}
 			//Vai fechar o arquivo que abrimos para pegar informações
@@ -59,7 +61,7 @@ programa
 			escreva("Erro!, Arquivo não existe nesta pasta")
 			encerrar = falso
 		}
-
+		//contador--
 		//Enquanto o encerrar for diferente de falso no caso for verdadeiro vai continua fazendo um loop infinito
 		enquanto(encerrar != falso){ 
 			// se opcao for menor que 1 no caso for 0 vai entrar na estrutura de menu
@@ -83,49 +85,57 @@ programa
 			escolha(opcao){
 				
 				caso 1:
-				//se a quantidade de cadastro for 0 vai perguntar quantos cadastro vai fazer de novo
-					se(quantiCadastro == 0){
-						
-						//Aqui quantos usuários vai ser cadastrardo
-						escreva("Quantos usuários você vai ser cadastrado? \n")
-						leia(quantiCadastro)
-						limpa()
-					}
-					//quantVezes essa variavel vai ficar responsavel pelo menu toda vez que cadastrar um usuário
-					quantVezes = 0
-					
-					//Enquanto contador for menor ou igual a quantiCadastro vai continuar no loop
-					// Ou quantiCadastro < que contador vai continuar no loop
-					enquanto (contador <= quantiCadastro ou quantiCadastro < contador){
-
-						// se quantVezes for igual a 1 vai para o menu, toda vez que cadastrar um usuário
-						se(quantVezes == 1){
-							opcao  = 0
+					//Verificando se tem capacidade no vetores
+					se(contador <= capacidade){
+						//se a quantidade de cadastro for 0 vai perguntar quantos cadastro vai fazer de novo
+						se(quantiCadastro == 0){
+							
+							//Aqui quantos usuários vai ser cadastrardo
+							escreva("Quantos usuários você vai ser cadastrado? \n")
+							leia(quantiCadastro)
 							limpa()
-							pare
 						}
-
-						//Qual o nome do usuário que sera cadastrardo
-						escreva ("Digite nome do(a) usuário(a): \n")
-						leia(nome)
-
-						//Qual a idade do usuário que sera cadastrardo
-						escreva ("Agora digite a idade do(a) ", nome,": \n")
-						leia(idade)
-
-						//Aqui vamos colocar o nome do usuário no vetor
-						nomeUsuarios[contador - 1] = nome
-
-						//Aqui vamos colocar a idade do usuário no vetor
-						idadeUsuarios[contador - 1] = idade
-
-						//Tamos botando 1 toda vez que passar no loop
-						contador++
-						//Tamos tirando 1 toda vez que passar no loop
-						quantiCadastro--
-						//Tamos botando 1 toda vez que passar no loop
-						quantVezes++
+						//quantVezes essa variavel vai ficar responsavel pelo menu toda vez que cadastrar um usuário
+						quantVezes = 0
+						
+						//Enquanto contador for menor ou igual a quantiCadastro vai continuar no loop
+						// Ou quantiCadastro < que contador vai continuar no loop
+						enquanto (contador <= quantiCadastro ou quantiCadastro < contador){
+	
+							// se quantVezes for igual a 1 vai para o menu, toda vez que cadastrar um usuário
+							se(quantVezes == 1){
+								opcao  = 0
+								limpa()
+								pare
+							}
+	
+							//Qual o nome do usuário que sera cadastrardo
+							escreva ("Digite nome do(a) usuário(a): \n")
+							leia(nome)
+	
+							//Qual a idade do usuário que sera cadastrardo
+							escreva ("Agora digite a idade do(a) ", nome,": \n")
+							leia(idade)
+	
+							//Aqui vamos colocar o nome do usuário no vetor
+							nomeUsuarios[contador - 1] = nome
+	
+							//Aqui vamos colocar a idade do usuário no vetor
+							idadeUsuarios[contador - 1] = idade
+	
+							//Tamos botando 1 toda vez que passar no loop
+							contador++
+							//Tamos tirando 1 toda vez que passar no loop
+							quantiCadastro--
+							//Tamos botando 1 toda vez que passar no loop
+							quantVezes++
+						}
+					}senao{
+						limpa()
+						escreva("A capacidade de usuários cadastrados foi excidade\n")
+						opcao = 0
 					}
+					
 				pare
 				caso 2:
 					escreva("Lista de todos os usuários cadastrados:\n")
@@ -144,13 +154,25 @@ programa
 					opcao = 0
 				pare
 				caso 3:
-					//Aqui vamos pegar todo que esta dentro dos vetores nomeUsuarios 
-					// e idadeUsuarios e escrever tudo no arquivo usuarios.txt
-					para(; indice < contador; indice++){
-						endereco = A.abrir_arquivo(arquivoNome, A.MODO_ACRESCENTAR)
-						A.escrever_linha(nomeUsuarios[indice - 1], endereco)
-						A.escrever_linha(idadeUsuarios[indice - 1], endereco)
-						A.fechar_arquivo(endereco)
+					//Verificando se o indice é 0
+					se(indice == 0){
+						//Aqui vamos pegar todo que esta dentro dos vetores nomeUsuarios 
+						// e idadeUsuarios e escrever tudo no arquivo usuarios.txt
+						para(inteiro i=1; i < contador; i++){
+							endereco = A.abrir_arquivo(arquivoNome, A.MODO_ACRESCENTAR)
+							A.escrever_linha(nomeUsuarios[i-1], endereco)
+							A.escrever_linha(idadeUsuarios[i-1], endereco)
+							A.fechar_arquivo(endereco)
+						}
+					}senao{
+						//Aqui vamos pegar todo que esta dentro dos vetores nomeUsuarios 
+						// e idadeUsuarios e escrever tudo no arquivo usuarios.txt
+						para(; indice < contador; indice++){
+							endereco = A.abrir_arquivo(arquivoNome, A.MODO_ACRESCENTAR)
+							A.escrever_linha(nomeUsuarios[indice-1], endereco)
+							A.escrever_linha(idadeUsuarios[indice-1], endereco)
+							A.fechar_arquivo(endereco)
+						}	
 					}
 					
 					//Vai encerrar o sistema
@@ -175,9 +197,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 4962; 
+ * @POSICAO-CURSOR = 5715; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = {quantiCadastro, 9, 10, 14}-{opcao, 9, 29, 5}-{contador, 9, 39, 8}-{contNome, 9, 68, 8}-{contIdade, 9, 80, 9}-{indice, 9, 100, 6}-{nomeUsuarios, 11, 9, 12}-{idadeUsuarios, 11, 27, 13};
+ * @SIMBOLOS-INSPECIONADOS = {quantiCadastro, 9, 10, 14}-{opcao, 9, 29, 5}-{contador, 9, 39, 8}-{contNome, 9, 72, 8}-{contIdade, 9, 84, 9}-{flag, 9, 97, 4}-{indice, 9, 104, 6}-{nomeUsuarios, 11, 9, 12}-{idadeUsuarios, 11, 26, 13};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
