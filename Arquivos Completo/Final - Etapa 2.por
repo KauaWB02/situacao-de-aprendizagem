@@ -15,6 +15,7 @@ programa
 		leia(quantiCadastro)
 		limpa()
 
+		//Pegando a acapacidade de armazenamento do vetor
 		capacidade = U.numero_elementos(nomeUsuarios)
 		//Verificando se o arquivo existe
 		se(A.arquivo_existe(arquivoNome)){
@@ -61,7 +62,6 @@ programa
 			escreva("Erro!, Arquivo não existe nesta pasta")
 			encerrar = falso
 		}
-		//contador--
 		//Enquanto o encerrar for diferente de falso no caso for verdadeiro vai continua fazendo um loop infinito
 		enquanto(encerrar != falso){ 
 			// se opcao for menor que 1 no caso for 0 vai entrar na estrutura de menu
@@ -197,7 +197,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 3106; 
+ * @POSICAO-CURSOR = 5037; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {quantiCadastro, 9, 10, 14}-{opcao, 9, 29, 5}-{contador, 9, 39, 8}-{contNome, 9, 72, 8}-{contIdade, 9, 84, 9}-{flag, 9, 97, 4}-{indice, 9, 104, 6}-{nomeUsuarios, 11, 9, 12}-{idadeUsuarios, 11, 26, 13};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
